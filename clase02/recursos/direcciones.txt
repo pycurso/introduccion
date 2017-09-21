@@ -1,0 +1,2 @@
+https://pyapi.herokuapp.com/chat
+https://gobiernoabierto.cordoba.gob.ar/api/
