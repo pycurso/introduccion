@@ -26,4 +26,3 @@ Abrir una terminal en la carpeta del repositorio del curso y ejecutar
 ### Ejecutar ipython
 
     ipython
-
