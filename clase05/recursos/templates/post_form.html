@@ -1,0 +1,20 @@
+		<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+		  <div class="modal-dialog">
+		  <div class="modal-content">
+			  <div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					Update Status
+			  </div>
+			  <div class="modal-body">
+				  <form class="form center-block" action="{{ action_form }}" method="post" enctype='multipart/form-data'>
+					    {% csrf_token %}
+					    {{ form }}
+				  		<input type="submit" value="Post" />
+				  </form>
+			  </div>
+			  <div class="modal-footer">
+
+			  </div>
+		  </div>
+		  </div>
+		</div>

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contenido %}
+
+    {% for post in posts %}
+        {% include "post_card.html" with post=post %}
+    {% endfor %}
+
+{% endblock %}

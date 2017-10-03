@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+
+         <i class="pull-right">{{ post.creado |date:"SHORT_DATETIME_FORMAT" }}</i>
+
+         <h4>{{ post.usuario.alias }} publicó {{ post.titulo }}</h4>
+
+    </div>
+    <div class="panel-body">
+        {% if post.imagen %}
+
+            <p>
+                <img src="{{  post.imagen.url }}" style="width:100%">
+            </p>
+
+            <div class="clearfix"></div>
+            <hr>
+        {% endif %}
+
+    {{post.contenido}}
+  </div>
+
+</div>

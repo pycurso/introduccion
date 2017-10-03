@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>Facebook Theme Demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		{% load static %}
+
+        <link href="{% static  "css/bootstrap.css" %}" rel="stylesheet">
+
+        <!--[if lt IE 9]>
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link href="{% static  "css/facebook.css" %}" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <div class="row">
+
+
+					<!-- main right col -->
+					<div class="column col-sm-12 col-xs-12" id="main">
+						<!-- top nav -->
+						{% include "barra.html" with user=user %}
+						<!-- /top nav -->
+						<div class="padding">
+							<div class="full col-sm-9">
+
+								<!-- content -->
+								<div class="row">
+
+								 <!-- main col left -->
+								 <div class="col-sm-3">
+									 {% include "user_info.html" with user=user %}
+
+								  </div>
+
+								  <!-- main col right -->
+								  <div class="col-sm-7">
+
+									  {% block contenido %}
+									  {% endblock %}
+
+								  </div>
+							   </div><!--/row-->
+
+								<hr>
+
+
+							</div><!-- /col-9 -->
+						</div><!-- /padding -->
+					</div>
+					<!-- /main -->
+
+		</div>
+
+
+		<!--post modal-->
+
+		{% include "post_form.html" with user=user form=form action_form=action_form %}
+
+        <script type="text/javascript" src="{% static  "js/jquery.js" %}"></script>
+        <script type="text/javascript" src="{% static  "js/bootstrap.js" %}"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+			$('[data-toggle=offcanvas]').click(function() {
+				$(this).toggleClass('visible-xs text-center');
+				$(this).find('i').toggleClass('glyphicon-chevron-right glyphicon-chevron-left');
+				$('.row-offcanvas').toggleClass('active');
+				$('#lg-menu').toggleClass('hidden-xs').toggleClass('visible-xs');
+				$('#xs-menu').toggleClass('visible-xs').toggleClass('hidden-xs');
+				$('#btnShow').toggle();
+			});
+        });
+        </script>
+</body></html>

@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+      {% if user.is_authenticated  %}
+        <div class="panel-thumbnail"><img src="{{ user.cuenta.foto.url }}" class="img-responsive"></div>
+        <div class="panel-body">
+          <p class="lead">{{ user.cuenta.alias }}</p>
+          <p>{{ user.cuenta.post_set.all | length }} Posts</p>
+          <p>{{ user.email }}</p>
+          <p><a href="#"> Mi Muro</a></p>
+        </div>
+      {% endif %}
+</div>
