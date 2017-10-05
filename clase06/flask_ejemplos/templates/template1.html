@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Flask App</title>
+        <link href="{{ url_for('static', filename='style.css') }}"  rel="stylesheet"></link>
+    </head>
+    <body>
+
+    {% if name %}
+      <h1 class="titulo">Hola {{ name }}!</h1>
+
+    {% else %}
+
+      <h1>Hola mundo!</h1>
+
+    {% endif %}
+
+    {% for num in nums %}
+       <p><b>Num:</b> {{ num }} </p>
+    {% endfor %}
+
+    </body>
+</html>
